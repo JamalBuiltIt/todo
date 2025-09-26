@@ -55,6 +55,11 @@ const TodoList = () => {
     return true;
   });
 
+  // ✅ Progress bar calculation
+  const completedCount = todos.filter((t) => t.completed).length;
+  const progress =
+    todos.length === 0 ? 0 : Math.round((completedCount / todos.length) * 100);
+
   return (
     <div className={`todo-app ${darkMode ? "dark" : ""}`}>
       <h1>Enhanced Todo App</h1>
@@ -77,6 +82,15 @@ const TodoList = () => {
         <button onClick={() => setFilter("active")}>Active</button>
         <button onClick={() => setFilter("completed")}>Completed</button>
       </div>
+
+      {/* ✅ Progress bar */}
+      <div className="progress-container">
+        <div
+          className="progress-bar"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      <p>{progress}% completed</p>
 
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="todos">
