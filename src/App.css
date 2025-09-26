@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+/* Dark Mode */
+.app.dark {
+  background: #1e1e2f;
+  color: #eee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: auto;
+  color: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Categories */
+.category {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Progress Bar */
+.progress-container {
+  position: relative;
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  height: 10px;
+  margin: 1rem 0;
+  overflow: hidden;
 }
-
-.App-link {
-  color: #61dafb;
+.progress-bar {
+  background: #4cafef;
+  height: 100%;
+  transition: width 0.3s ease;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.progress-label {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  margin-top: 4px;
 }
