@@ -13,6 +13,7 @@ export default function TodoForm({ addTodo }) {
   };
 
   return (
+    
     <form className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
@@ -20,13 +21,8 @@ export default function TodoForm({ addTodo }) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option>General</option>
-        <option>Work</option>
-        <option>Personal</option>
-        <option>Urgent</option>
-      </select>
-      <button type="submit">➕</button>
-    </form>
+      </form>
+      
   );
+
 }

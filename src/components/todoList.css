@@ -7,6 +7,10 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   font-family: Arial, sans-serif;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .todo-app.dark {
@@ -56,7 +60,24 @@
 ul {
   list-style: none;
   padding: 0;
+  max-height: 200px; /* limit height */
+  overflow-y: auto;  /* enable vertical scroll */
+  scrollbar-width: thin;
+  scrollbar-color: #007bff #f0f0f0;
 }
+
+/* optional for WebKit browsers */
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+ul::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 8px;
+}
+ul::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
 
 li {
   display: flex;
